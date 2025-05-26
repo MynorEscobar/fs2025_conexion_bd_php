@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h1>Nueva Región</h1>
-        <!--insertar_region.php es el archivo que almacenara los datos en la bd-->
+        <!--crud_region.php es el archivo que realizara los procesos 
+        crud en la bd-->
         <form action="crud_region.php" method="post">
             <label for="txt_codigo" class="form-label">Código</label>
             <input type="number" name="txt_codigo" id="txt_codigo" class="form-control">
