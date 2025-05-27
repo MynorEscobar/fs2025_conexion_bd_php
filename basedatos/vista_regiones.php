@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/animaciones.css">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        
+
                     </div>
                 </div>
             </div>
@@ -77,14 +78,14 @@
                     <td><?php echo $datos['descripcion'];?></td>
                     <td>
                         <form action="crud_region.php" method="post">
-                            <input type="hidden" name="hidden_codigo" id="hidden_codigo" 
+                            <input type="hidden" name="hidden_codigo" id="hidden_codigo"
                                 value="<?php echo $datos['cod_region'];?>">
                             <button type="submit" name="btn_eliminar" id="btn_eliminar"
-                            class="btn btn-outline-secondary p-1">
+                                class="btn btn-outline-secondary p-1">
                                 <i class="bi bi-trash3"></i>
                             </button>
                         </form>
-                        
+
                         <i class="bi bi-pencil-square"></i>
                     </td>
                 </tr>
