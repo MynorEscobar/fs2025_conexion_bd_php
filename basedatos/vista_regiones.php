@@ -76,17 +76,26 @@
                     <td><?php echo $datos['cod_region'];?></td>
                     <td><?php echo $datos['nombre'];?></td>
                     <td><?php echo $datos['descripcion'];?></td>
-                    <td>
-                        <form action="crud_region.php" method="post">
+                    <td class="d-flex flex-row">
+                        <form action="crud_region.php" method="post" class="me-1">
                             <input type="hidden" name="hidden_codigo" id="hidden_codigo"
                                 value="<?php echo $datos['cod_region'];?>">
                             <button type="submit" name="btn_eliminar" id="btn_eliminar"
-                                class="btn btn-outline-secondary p-1">
+                                class="btn btn-outline-danger p-1">
                                 <i class="bi bi-trash3"></i>
+                            </button>
+                            
+                        </form>
+                        <form action="form_actualizar_region.php" method="post">
+                            <input type="hidden" name="hidden_codigoa" id="hidden_codigoa"
+                                value="<?php echo $datos['cod_region'];?>">
+                            <button type="submit" class="btn btn-outline-success p-1"
+                                name="btn_editar" id="btn_editar">
+                                <i class="bi bi-pencil-square"></i>
                             </button>
                         </form>
 
-                        <i class="bi bi-pencil-square"></i>
+                        
                     </td>
                 </tr>
                 <?php
