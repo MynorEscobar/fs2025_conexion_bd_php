@@ -37,8 +37,9 @@
             <input type="text" name="txt_desc" id="txt_desc" 
                 value="<?= $datos['descripcion']?>"
                 class="form-control">
-            <button type="submit" class="form-control btn btn-primary">
-                Agregar Región</button>
+            <button type="submit" class="form-control btn btn-primary"
+                name="btn_modificar" id="btn_modificar">
+                Modificar Región</button>
         </form>
     </div>
 
