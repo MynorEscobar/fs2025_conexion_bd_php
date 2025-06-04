@@ -17,7 +17,7 @@
 
     <?php 
     require_once("conexion.php");
-    $sql="select * from regiones";
+    $sql="SELECT * FROM vista_datos_ciudadanos3";
     //ejecutar la consulta en la base de datos utilizando
     //la conexión realizada
     $ejecutar =mysqli_query($conexion, $sql);
@@ -25,10 +25,10 @@
     ?>
 
     <div class="container">
-        <h1>Regiones</h1>
+        <h1>Ciudadanos</h1>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Agregar región
+            Agregar ciudadanos
         </button>
 
         <!-- Modal -->
@@ -64,9 +64,14 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Región</th>
-                    <th>Descripción</th>
+                    <th>DPI</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>TELEFONO</th>
+                    <th>MUNICIPIO</th>
+                    <th>DEPARTAMENTO</th>
+                    <th>REGIÓN</th>
+
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -75,13 +80,17 @@
     while($datos = mysqli_fetch_assoc($ejecutar)){
        ?>
                 <tr>
-                    <td><?php echo $datos['cod_region'];?></td>
+                    <td><?php echo $datos['dpi'];?></td>
                     <td><?php echo $datos['nombre'];?></td>
-                    <td><?php echo $datos['descripcion'];?></td>
+                    <td><?php echo $datos['apellido'];?></td>
+                    <td><?=$datos['tel_movil']; ?></td>
+                    <td><?=$datos['municipio']; ?></td>
+                    <td><?=$datos['departamento']; ?></td>
+                    <td><?=$datos['region']; ?></td>
                     <td class="d-flex flex-row">
                         <form action="crud_region.php" method="post" class="me-1">
                             <input type="hidden" name="hidden_codigo" id="hidden_codigo"
-                                value="<?php echo $datos['cod_region'];?>">
+                                value="<?php echo $datos['dpi'];?>">
                             <button type="submit" name="btn_eliminar" id="btn_eliminar"
                                 class="btn btn-outline-danger p-1">
                                 <i class="bi bi-trash3"></i>
@@ -90,7 +99,7 @@
                         </form>
                         <form action="form_actualizar_region.php" method="post">
                             <input type="hidden" name="hidden_codigoa" id="hidden_codigoa"
-                                value="<?php echo $datos['cod_region'];?>">
+                                value="<?php echo $datos['dpi'];?>">
                             <button type="submit" class="btn btn-outline-success p-1"
                                 name="btn_editar" id="btn_editar">
                                 <i class="bi bi-pencil-square"></i>
